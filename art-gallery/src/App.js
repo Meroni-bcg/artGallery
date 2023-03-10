@@ -1,7 +1,8 @@
 import './App.css';
 import {useState, useEffect} from 'react'
-import { Gallery } from '.Gallery.js'
-import { ButtonBar } from '.ButtonBar.js'
+import ButtonBar from './ButtonBar.js'
+import Gallery from './Gallery.js'
+
 
 function App(){
   let [artId, setArtId] = useState(12720)
@@ -14,21 +15,11 @@ function App(){
       .then(resData => setData(resData))
   }, [artId])
 
-// in App.js
+
 // send this function down to <ButtonBar />
 const handleIterate = (e) => {
   setArtId(artId + Number(e.target.value))
 }
-
-function Gallery(props){
-  return (
-      <div style={{'width': '100%'}}>
-          <img src={props.objectImg} alt={props.title} />
-          <p>{props.artist}</p>
-      </div>
-  )
-}
-
 
 return (
   <div>
