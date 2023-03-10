@@ -22,10 +22,10 @@ const handleIterate = (e) => {
 }
 
 return (
-  <div>
-      <Gallery objectImg={data.primaryImage} artist={data.artistDisplayName} title={data.title} />
-      <buttonBar handleIterate={handleIterate} />
-
+  <div className = 'App'>
+    <h1>{data.title}</h1>
+    <Gallery data={data} />
+    <ButtonBar setArtId={handleIterate}/>
   </div>
 )
 }
